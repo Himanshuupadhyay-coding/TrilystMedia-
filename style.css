@@ -192,7 +192,7 @@ a {
 
 .logo img {
     height: 200%;
-    width: 300%;
+    width: auto;
     object-fit: contain;
 }
 
