@@ -1,0 +1,127 @@
+/* GSAP Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.scale-up {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.rotate-in {
+    opacity: 0;
+    transform: rotate(-5deg);
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+.delay-4 {
+    animation-delay: 0.8s;
+}
+
+.delay-5 {
+    animation-delay: 1s;
+}
+
+/* Animation Triggers */
+[data-animate] {
+    opacity: 0;
+}
+
+[data-animate="fade-up"] {
+    transform: translateY(50px);
+}
+
+[data-animate="fade-down"] {
+    transform: translateY(-50px);
+}
+
+[data-animate="fade-left"] {
+    transform: translateX(50px);
+}
+
+[data-animate="fade-right"] {
+    transform: translateX(-50px);
+}
+
+[data-animate="zoom-in"] {
+    transform: scale(0.8);
+}
+
+[data-animate="flip-up"] {
+    transform: perspective(1000px) rotateX(30deg);
+}
+
+/* Animated Elements */
+.animated-border {
+    position: relative;
+}
+
+.animated-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-violet));
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.animated-border:hover::after {
+    width: 100%;
+}
+
+.pulse-element {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.float-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Gradient Background Animation */
+.gradient-bg {
+    background: linear-gradient(-45deg, var(--accent-orange), var(--accent-green), var(--accent-violet), var(--accent-gold));
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
