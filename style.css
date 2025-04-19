@@ -1,6 +1,5 @@
 /* Base Styles with New Color Palette */
 :root {
-    :root {
         --navy-blue: #22333B;
         --black: #0A0908;
         --crimson: #C6AC8E;
@@ -8,9 +7,7 @@
         --light-gray: #D0D0D0;
         --soft-silver: #F1EFEF;
         --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-      }
-      
-
+ 
 }
 
 * {
