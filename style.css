@@ -182,7 +182,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 0;
+    padding: 9px 0;
     background-color: #1f1f1f;
     backdrop-filter: blur(10px);
     z-index: 1000;
