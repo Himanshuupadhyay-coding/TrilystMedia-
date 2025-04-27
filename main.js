@@ -232,3 +232,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+
+
+
+
+
+
+// GSAP Smooth Scroll with ScrollTrigger
+function initSmoothScrolling() {
+    // Set up the smooth scrolling container
+    const container = document.scrollingElement || document.documentElement;
+    
+    // Calculate total scrollable height
+    const getMaxHeight = () => document.body.scrollHeight - window.innerHeight;
+    
+    // GSAP animation for smooth scroll
+    gsap.to(container, {
+      scrollTo: 0,
+      ease: "none",
+      duration: 1,
+      
+      scrollTrigger: {
+        start: 0,
+        end: "max",
+        scrub: 0.5 // Smoothness (0 = no smoothing, 1 = very smooth)
+      }
+    });
+    
+    // Custom scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+          const offset = 80; // Navbar height
+          const targetPosition = targetElement.offsetTop - offset;
+          
+          gsap.to(window, {
+            scrollTo: { y: targetPosition, autoKill: false },
+            duration: 1.2,
+            ease: "power2.inOut"
+          });
+          
+          // Update URL
+          history.pushState(null, null, targetId);
+        }
+      });
+    });
+  }
+  
+  // Initialize when page loads
+  window.addEventListener('load', initSmoothScrolling);
