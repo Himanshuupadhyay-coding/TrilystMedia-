@@ -844,7 +844,7 @@ a {
 }
 
 /* Services Section */
-.services-section {
+/* .services-section {
     padding: 100px 0;
     background-color: var(--black);
 }
@@ -921,7 +921,122 @@ a {
     height: 10px;
     background: var(--crimson);
     border-radius: 50%;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+/* service sections */
+
+.services-section {
+    padding: 100px 0;
+    background-color: var(--black);
 }
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.service-item {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(18, 18, 18, 0.8);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.service-photo {
+    flex: 1;
+    min-height: 300px;
+    max-height: 400px;
+}
+
+.service-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.service-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--crimson);
+}
+
+.service-content p {
+    margin-bottom: 20px;
+    color: rgba(245, 245, 220, 0.8);
+}
+
+.service-features {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.service-features li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    color: rgba(245, 245, 220, 0.9);
+}
+
+.service-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    background: var(--crimson);
+    border-radius: 50%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-item {
+        flex-direction: column !important;
+    }
+
+    .service-photo,
+    .service-content {
+        width: 100%;
+    }
+
+    .service-content {
+        padding: 30px 20px;
+    }
+}
+
 
 /* Final CTA */
 .final-cta {
